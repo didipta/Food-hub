@@ -1,3 +1,10 @@
+<?php
+$userid=$_GET['id'];
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="eng">
 <head>

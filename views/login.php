@@ -1,8 +1,9 @@
 <?php
-
+$userid="";
 if(!empty($_POST["uname"])) {
 	setcookie ("uname",$_POST["uname"],time()+ (86400 * 30), "/");
 	setcookie ("password",$_POST["password"],time()+ (86400 * 30), "/");
+  $userid=$_POST["uname"];
 } 
 else {
 	setcookie("uname","");
@@ -21,11 +22,33 @@ else {
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
       $userid = $_POST['uname'];
-     $Password = $_POST['password'];
+      $Password = $_POST['password'];
 
-      if(substr($userid,0,4)=="111-" && $Password=="1234")
+      if(substr($userid,0,4)=="111-")
       {
-        header('Location: http://localhost/project/views/homepage.php');
+        $sql="SELECT *FROM usertb where User_id= '$userid' AND cPassword= '$Password' ";
+        $con=mysqli_connect('localhost','root');
+        mysqli_select_db($con,'registrationbd');
+
+          $q= mysqli_query($con,$sql);
+          $num= mysqli_num_rows($q);
+          if($num == 1){
+
+            
+            header("Location: http://localhost/project/views/homepage.php?id=$userid");
+          }
+          else
+          {
+            $error="please right user-id or password provide...!!";
+            $style="#log-in{ background-color: rgba(255, 0, 0, 0.507); border: 1px solid rgb(253, 95, 95);}
+            .input-field{ border: .5px solid rgb(253, 95, 95);}
+            ";
+           $worning= "<i class='fa fa-exclamation-circle' aria-hidden='true'></i>";
+           
+          }
+   
+        
+       
       }
 
       elseif(substr($userid,0,4)=="200-" && $Password=="1234")
@@ -62,7 +85,10 @@ else {
     <title>Food-HubLOG-In</title>
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon" >
     <link rel="stylesheet" href="/project/css/log-in.css">
-    <style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <style>
       <?php echo $style;?>
    </style>
 </head>
@@ -91,7 +117,7 @@ else {
 
 
 
-            <input type="submit" value="Sign In" class="btn">
+            <input type="submit" value="Sign In"  class="btn">
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -144,8 +170,12 @@ else {
         x.type="password";
     }
     }
-
     </script>
+
+
+
+
+
 </body>
 </html>
 

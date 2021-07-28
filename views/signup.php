@@ -1,4 +1,13 @@
+<?php include 'database/signuppage.php';?>
+<?php
+  $con=mysqli_connect('localhost','root');
+  mysqli_select_db($con,'registrationbd');
 
+  $ql="SELECT *FROM usertb";
+  $result= mysqli_query($con, $ql);
+
+   $num1= mysqli_num_rows($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +18,9 @@
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon">
     <link rel="stylesheet" href="/project/css/log-in.css">
     <link rel="stylesheet" href="/project/css/signup.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <style>
     <?php echo $nameErr;?>
     <?php echo $addressErr;?>
@@ -23,13 +34,10 @@
 </head>
 <body>
 
-<?php
- $fa=filesize("Signup.txt");
-?>
 
     <section name="login" id="Sign-up">
         
-        <form action="signuppage.php" class="sign-up-form" method="POST">
+        <form action="#" class="sign-up-form" method="POST">
             <h2 class="title">Sign up</h2>
             <div class="input-field username">
               <i class="fa fa-user"></i>
@@ -38,7 +46,7 @@
 
            <div class="input-field address">
             <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <input type="text" name="add" id="add" placeholder="Address"  pattern="[A-Za-z\s]+">
+              <input type="text" name="add" id="add" placeholder="Address"  required="">
             </div>
 
             <div class="input-field email">
@@ -52,7 +60,7 @@
 
               <div class="input-field uid">
                 <i class="fa fa-user-o" aria-hidden="true"></i>
-                <input type="text" value="<?php $f=(1*$fa); echo $userid="111-".(12345+$f);?>" name="uid" id="uid" placeholder="User id" >
+                <input type="text" value="<?php $f=(2*$num1); echo $userid="111-".(10130+$f);?>" name="uid" id="uid" placeholder="User id" >
               </div>
               
             <div class="input-field password">
@@ -68,11 +76,11 @@
                 <div class="eye eyes" onclick=" myFunction() "><i class="fa fa-eye" aria-hidden="true" ></i></div> 
               </div>
             <input type="submit" class="btn" value="Sign up" />
-           
+           <?php echo $message;?>
         </form>
     
     </section>
-  
+    
    
         <div class="circul-signup">
             <img src="img/LOGO.jpg" alt="">
@@ -107,8 +115,10 @@
 
               </a>
             </div>
+
+      
           </div>
-         
+    
   
     <script>
 

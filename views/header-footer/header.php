@@ -1,3 +1,18 @@
+<?php
+$con=mysqli_connect('localhost','root');
+mysqli_select_db($con,'registrationbd');
+$ql="SELECT *FROM usertb where User_id='$userid'";
+$result= mysqli_query($con, $ql);
+$data=mysqli_fetch_assoc($result);
+$username=$data['Username'];
+$address=$data['Address'];
+$Email=$data['Email'];
+$uid=$data['User_id'];
+$phone=$data['Phone_number'];
+$pasw=$data['cPassword'];
+
+?>
+
 <style>
 a{
     text-decoration: none;
@@ -117,7 +132,7 @@ a{
 
 <div class="logo">
         <div class="logo-head">
-        <a href="http://localhost/project/views/homepage.php">
+        <a href="http://localhost/project/views/homepage.php?id=<?php echo $userid ;?>"">
             <img src="img/LOGO.jpg" alt="">
             <h1>Foob-hub Restaurant</h1>
          </a>
@@ -126,10 +141,10 @@ a{
             <input type="search" name="" placeholder="Search........"><i class="fa fa-search" aria-hidden="true"></i>
         </div>
         <ul class="head-menu">
-          <li class="profile"><a href="http://localhost/project/views/profile.php"><i class="fa fa-user icon" aria-hidden="true"></i>&nbsp;@dipta</a>
+          <li class="profile"><a href="#"><i class="fa fa-user icon" aria-hidden="true"></i>&nbsp;@<?php $name=substr($username,0,5); echo $name ;?></a>
             <div class="sub-menu">
                 <ul>
-                    <li><a href="http://localhost/project/views/profile.php">Profile</a></li>
+                    <li><a href="http://localhost/project/views/profile.php?id=<?php echo $userid ;?>">Profile</a></li>
                     <li><a href="#">My order</a></li>
                     <li><a href="#">Vouchers </a></li>
                     <li><a href="#">Refund Account</a></li>
