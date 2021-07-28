@@ -30,7 +30,6 @@ $rowstatus=0;
 </head>
 <body>
  
-
 <div>
     <?php include 'header-footer/staffnavgation.php';?>
 </div>
