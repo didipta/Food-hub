@@ -6,6 +6,12 @@ require_once('./database/createDb.php');
 $database=new createDb("Productdb","ProductTB");
 ?>
 
+<?php
+$userid=$_GET['id'];
+
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -101,7 +107,7 @@ $database=new createDb("Productdb","ProductTB");
                $result=$database->getData();
                while ($row=mysqli_fetch_assoc($result)){
                 $z= $row['id'];
-                echo "<a href='addtocartpage.php?id=$z'>";
+                echo "<a href='addtocartpage.php?id=$z & uid=$userid '>";
                 foodproducts($row['product_name'],$row['product_price'],$row['product_img'],$row['product_type'],$row['product_status']);
                 echo "</a>";
                }

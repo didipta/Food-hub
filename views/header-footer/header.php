@@ -126,7 +126,10 @@ a{
     display: inline;
     color: rgb(36, 36, 36);
 }
-
+.profile
+{
+    text-transform: lowercase;
+}
     </style>
 
 

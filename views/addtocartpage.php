@@ -13,6 +13,13 @@ if($result->num_rows>0)
 
 ?>
 
+<?php
+$userid=$_GET['uid'];
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
