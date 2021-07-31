@@ -15,29 +15,18 @@
     <script src="/project/js/chart.js"></script>
     <title>Dashboard</title>
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon" >
+    <style>
+       .navigation .Dashboard{
+              background-color: rgb(59, 121, 214);
+             border-radius: 3px;
+              color: rgb(255, 255, 255);
+        }
+        </style>
 </head>
 <body>
-<section id="nav">
-        <div class="res-logo">
-            <img src="./img/LOGO.jpg" alt="">
-        </div>
-        <div class="navigation">
-         
-        <ul>
-            <li style="padding-left: 15px; font-weight: 900;">Menu</li>
-             <li><a href="#" style="background-color: rgb(59, 121, 214); border-radius: 3px; color: rgb(255, 255, 255);"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a></li> 
-            <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i></i>&nbsp;All iteam</a></li>
-            <li><a href="#"><i class="fa fa-puzzle-piece" aria-hidden="true"></i>&nbsp;Add Employees</a></li>
-            <li><a href="Alluserinfo.php"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;All User</a></li> 
-            <li><a href="Aboutus.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Categories</a></li>
-            <li><a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;Order info</a></li>
-            <li><a href="#"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Roles</a></li>
-            <li><a href="#"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;privacy Policy</a></li>
-            <li><a href="login.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log-out</a></li>
-        </ul>
-        </div>
-
-    </section>
+<div>
+    <?php include 'header-footer/adminnav.php';?>
+</div>
 
     <section id="view">
         <h2>Website Statistics</h2>

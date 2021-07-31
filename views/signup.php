@@ -1,4 +1,4 @@
-<?php include 'database/signuppage.php';?>
+
 <?php
   $con=mysqli_connect('localhost','root');
   mysqli_select_db($con,'registrationbd');
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/project/css/log-in.css">
     <link rel="stylesheet" href="/project/css/signup.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <style>
     <?php echo $nameErr;?>
@@ -34,7 +34,7 @@
 </head>
 <body>
 
-
+<?php include 'database/signuppage.php';?>
     <section name="login" id="Sign-up">
         
         <form action="#" class="sign-up-form" method="POST">

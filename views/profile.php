@@ -38,7 +38,7 @@ $cookie='setcookie ("password","",time()-3600, "/");';
     <?php include 'header-footer/header.php';?>
 </div>
 
-
+<section>
     <section id="profile-info">
 
         <form action="#" method="Post" class="profile-form" enctype="multipart/form-data">
@@ -132,14 +132,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ;?>" method="Post" class="Changepassword">
 
            
-                <div class="input-file-cp">
-                    <input type="text" id="username"  name="thispass" placeholder="Current password"><br>
+                <div class="input-file-cp" >
+                    <input type="password" id="password"  name="thispass" placeholder="Current password"><br>
+                    <div class="eye eyes" onclick=" myFunction() " style=" position:absolute; left:35vw; top:7.5vw;  cursor: pointer;"><i class="fa fa-eye" aria-hidden="true" ></i></div> 
                 </div>
                
           
                 <div class="input-file-cp">
-                    <input type="text" id="username" name="newpass" placeholder="New password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase 
-              and lowercase letter, and at least 8 or more characters"><br>
+                    <input type="password" id="cpassword" name="newpass" placeholder="New password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase 
+                        and lowercase letter, and at least 8 or more characters">
+              <div class="eye eyes" onclick=" myFunction() " style=" position:absolute; left:35vw; top:12vw;  cursor: pointer;"><i class="fa fa-eye" aria-hidden="true" ></i></div> 
                 </div>
 
                 <button class="btn">
@@ -157,8 +159,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </h1>
     </div>
   </section>
+</section>
 
+  <script>
 
+function myFunction(){
+var x= document.getElementById("password");
+var y= document.getElementById("cpassword");
+if(x.type==="password" || y.type==="password" )
+{
+    x.type="text";
+    y.type="text";
+
+}
+else{
+    x.type="password";
+    y.type="password";
+}
+}
+
+</script>
 
   
 </body>

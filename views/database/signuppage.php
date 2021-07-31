@@ -134,17 +134,17 @@ $messagebox2="<script>  swal('Good job!', 'Registration is Successful. User id i
      $num= mysqli_num_rows($result);
      if($num == 1){
 
-        $message="<script>swal('Done!', 'User Id is same', 'error');</script>";
+        $message="<script>swal('Fail!', 'User Id is same', 'error');</script>";
      }
      else
      {
          $sql="INSERT INTO `usertb` (`Username`,`Address`,`Email`,`Phone_number`,`User_id`,`cPassword`) VALUES ('$username','$address','$email','$phone','$uerid','$cpass') ";
          $q=mysqli_query($con,$sql);
-         echo "<div style=' z-index: 2; width:400px; background-color: rgb(158, 241, 190); text-align: center; box-shadow: rgba(82, 82, 85, 0.2) 1px 1px 5px 1px; padding: 10px; margin-left: 500px;'>
+         echo "<div style=' z-index: 2; width:400px; background-color: rgb(158, 241, 190); text-align: center; box-shadow: rgba(82, 82, 85, 0.2) 1px 1px 5px 1px; padding: 10px; margin:200px;'>
          <p style='font-weight: 900; color: rgb(0, 0, 0);'>Registration is complete</p>
          <p style='font-weight: 900; color: rgb(0, 0, 0);'>Your user_id is :$uerid</p>
-         <a href='http://localhost/project/views/signup.php'><button style='width: 80px; height: 40px; background-color: rgb(127, 164, 245); border: none; font-weight: 900; margin-left:300px ;'>Ok</button></a>
-    
+         <a href='http://localhost/project/views/signup.php'>$messagebox2<button style='width: 80px; height: 40px; background-color: rgb(127, 164, 245); border: none; font-weight: 900; margin-left:300px ;'>Ok</button></a>
+         
      </div>";
     
       
@@ -152,6 +152,7 @@ $messagebox2="<script>  swal('Good job!', 'Registration is Successful. User id i
      
      
   }
+  
   
   
  

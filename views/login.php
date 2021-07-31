@@ -51,9 +51,28 @@ else {
        
       }
 
-      elseif(substr($userid,0,4)=="200-" && $Password=="1234")
+      elseif(substr($userid,0,4)=="200-")
       {
-        header('Location: http://localhost/project/views/Admindashboard.php');
+        $sql="SELECT *FROM admin where USERID= '$userid' AND CONFIRMPASS= '$Password' ";
+        $con=mysqli_connect('localhost','root');
+        mysqli_select_db($con,'registrationbd');
+
+          $q= mysqli_query($con,$sql);
+          $num= mysqli_num_rows($q);
+          if($num == 1){
+
+        header("Location: http://localhost/project/views/Admindashboard.php?id=$userid");
+          }
+
+          else
+          {
+            $error="please right user-id or password provide...!!";
+            $style="#log-in{ background-color: rgba(255, 0, 0, 0.507); border: 1px solid rgb(253, 95, 95);}
+            .input-field{ border: .5px solid rgb(253, 95, 95);}
+            ";
+           $worning= "<i class='fa fa-exclamation-circle' aria-hidden='true'></i>";
+           
+          }
       }
       elseif(substr($userid,0,4)=="110-" && $Password=="1234")
       {

@@ -18,21 +18,22 @@ $asdw=$_GET['type'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/project/css/ALLPROdu.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <title>Add item</title>
 
     <style>
        .navigation .Additeam{
-            background-color: rgb(82, 82, 82);
-            border-radius: 3px;
-            color: rgb(255, 255, 255);
+             background-color: rgb(59, 121, 214);
+             border-radius: 3px;
+              color: rgb(255, 255, 255);
         }
         </style>
 </head>
 <body>
+
 <div>
-    <?php include 'header-footer/staffnavgation.php';?>
+    <?php include 'header-footer/adminnav.php';?>
 </div>
 
 <section id="Add-product">
@@ -61,7 +62,7 @@ $asdw=$_GET['type'];
     </select><br><br>
     <div style="display:flex;">
     <button class="send btn" >Submit</button>
-    <button class="send btn"><a href="product.php?eid= & type=" class="Additeam" style="color:white;">Cancel</a></button>
+    <button class="send btn"><a href="Adminproduct.php?eid= & type=" class="Additeam" style="color:white;">Cancel</a></button>
     
       </div>
    
@@ -113,7 +114,7 @@ $asdw=$_GET['type'];
 
             <td class='setting'><i class='fa fa-cog' aria-hidden='true'></i>
             <div class='edit-delet'>
-            <div style=' '> <a href='product.php?eid=$a & type=block'><input type='submit' value='Edit' style='cursor: pointer; background:none; border:none;' onclick='edits()' id='check'></a></div>
+            <div style=' '> <a href='Adminproduct.php?eid=$a & type=block'><input type='submit' value='Edit' style='cursor: pointer; background:none; border:none;' onclick='edits()' id='check'></a></div>
                 <div style=' '> <input type='submit' value='Delete' style='cursor: pointer; background:none; border:none;' onclick='deletes($a)' id='check'></div>
             </div>
 
@@ -182,7 +183,7 @@ $product_status=$data['product_status'];
   
     
     <button class="send btn" >Submit</button>
-    <button class="btn"><a href="product.php?eid= & type=" class="Additeam" style="color:white;">Cancel</a></button>
+    <button class="btn"><a href="Adminproduct.php?eid= & type=" class="Additeam" style="color:white;">Cancel</a></button>
               
 
       </div>
