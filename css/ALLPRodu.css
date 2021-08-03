@@ -11,7 +11,7 @@
     
 }
 body {
-    width: 95%;
+    width: 100%;
     background: #ffffff;
     padding: 0;
     display: grid;
@@ -45,7 +45,7 @@ a{
     border: 1px solid #ffffff;
     box-shadow: 1px 1px 1px 1px rgba(134, 134, 134, 0.548);
     position: absolute;
-    left: 30%;
+    left: 32%;
     top:2vw;
     border-radius: 3px;
     
@@ -115,7 +115,7 @@ a{
 #show-table
 {
   position: absolute;
-    left: 20%;
+    left: 22%;
     top:38vw;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(82, 82, 85, 0.2) 1px 1px 5px 1px;
@@ -137,6 +137,12 @@ a{
     background-color: rgb(203, 34, 255);
     color: rgb(255, 255, 255);
     
+}
+.s-list-td
+{
+  height: 60px;
+    background-color: rgb(54, 54, 54);
+    color: rgb(255, 255, 255);
 }
 .list-tr
 {
@@ -273,4 +279,39 @@ a{
     margin-left: 500px;
     display:none;
     
+}
+
+.live-search
+{
+  width: 1150px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  margin: 5px;
+}
+.live-search input
+{
+  width: 1000px;
+  height: 45px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  box-shadow: rgba(82, 82, 85, 0.2) 1px 1px 15px 1px;
+}
+.live-search button
+{
+  width: 100px;
+  height: 45px;
+  background-color: rgb(43, 41, 41);
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  box-shadow: rgba(82, 82, 85, 0.2) 1px 1px 15px 1px;
+  cursor: pointer;
+  border: none;
+  font-weight: 900;
+}
+.live-search button:hover
+{
+  background-color: rgb(77, 77, 77);
 }

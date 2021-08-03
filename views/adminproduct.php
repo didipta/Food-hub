@@ -72,6 +72,14 @@ $asdw=$_GET['type'];
 
 
       <section id="show-table">
+
+        
+      <div class="live-search">
+    <input type="text" name="search-live" id="search-live" placeholder="Search by product name....." >
+    <button>Search</button>
+    </div><br/>
+    <div id="result-search"></div><br/>
+    
       <div style="text-align: center; font-size: 1.2rem; font-weight: 900; margin: 10px;">List All Products</div>
 <table class="list-table">
   <tr class="list-td">
