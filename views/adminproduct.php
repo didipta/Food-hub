@@ -250,7 +250,32 @@ function edits(){
  
   </script>
 
- 
+<script>
+  $(document).ready(function(){
+    $('#search-live').keyup(function(){
+      var txt =$(this).val();
+      if(txt !='')
+      {
+        $('#result').html('');
+        $.ajax({
+          url:"./component/live-search.php",
+          type:"post",
+          data:{search:txt},
+          dataType:"text",
+          success:function(data)
+          {
+            $('#result-search').html(data);
+          }
+        });
+      }
+      else
+      {
+        $('#result-search').html('');
+      }
+
+    });
+  });
+</script>
  
 
 </body>
