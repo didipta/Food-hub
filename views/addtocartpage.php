@@ -26,8 +26,11 @@ $userid=$_GET['uid'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/project/css/addtocartpage.css">
-    <link rel="stylesheet" href="/project/css/jquery.nice-number.css">
+    <link rel="stylesheet" href="css/Addtocartpage.css">
+    <link rel="stylesheet" href="css/jquery.nice-number.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <title>Order page</title>
 </head>
 <body>
@@ -38,20 +41,20 @@ $userid=$_GET['uid'];
 
     <section id="contain">
         <div class="boxs">
-            <div class="ads"><p>Nikunjo-2,road=18,Dhaka,Bangladesh  <i class="fa fa-pencil" aria-hidden="true"></i></p></div>
+            <div class="ads"><p><?php echo $address;?> <i class="fa fa-pencil" aria-hidden="true"></i></p></div>
             <div class="order-now"><h4>Order Now</h4> </div>
             <div class="items">
-                <div class="img"><img src="<?php echo $productimg ?>" alt=""></div>
+                <div class="img"><img src="<?php echo $productimg; ?>" alt=""></div>
                 <div class="title"> 
 
-                    <h1><?php echo $productname?></h1>
+                    <h1><?php echo $productname;?></h1>
                     <p>Very tasty!!!</p>
                     <div class="price-number">
                     <div class="input"><input type="number" name="" id="value" value="1" min="1" ></div>
-                    <p ><?php echo $productprice?></p>
+                    <p >Only <span id="price"><?php echo $productprice;?></span>/-</p>
                     </div> 
                     
-                    <input type="submit" value="Add to cart " class="btn">
+                    <input type="submit" value="Add to cart " class="btn" onclick="cl()" >
 
                
             </div>
@@ -113,7 +116,7 @@ $userid=$_GET['uid'];
             
                             <div class="Detaild Detailed">
                                 <h3>Nikunjo-2,road=18,Dhaka,Bangladesh<i class="fa fa-pencil" aria-hidden="true"></i></h3>
-                                <h3>Delivery Charge:30/-</h3>
+                                <h3>Delivery Charge:45/-</h3>
                                 <h3>Delivery time :20-30 min</h3>
                                 
                             </div>
@@ -127,9 +130,80 @@ $userid=$_GET['uid'];
 
 
     </section>
+
+    <section class="payment" id="back">
+       
+       <h1>CONFIRMATION</h1>
+       <div class="paymentmethod">
+       <div class="orderaddre">
+           <span style="display: flex;">Order number:  <p style="padding-left: 10px; color: rgb(56, 149, 255);">FOHD#1231543123</p></span>
+           <p style=" color: rgb(105, 105, 105);"><?php echo $address;?> </p>
+           <h2 style="font-size: 1.7rem; color: rgb(0, 0, 0);letter-spacing: 3px;"><?php echo $productname?></h2>
+       </div>
+       <div class="price">
+        <h4 style="font-size: 1.3rem; font-weight: bolder; letter-spacing: 5px;">Product Price</h4>
+        <div style="display: flex; margin-left:100px ; font-size:1.3rem ; font-weight: bolder; color: rgb(97, 96, 96);"><p id="zx"></p>*<p id="xy"></p></div>
+        <h3 style="margin-left: 70px; font-size: 1.4rem; font-weight: bolder;"><span id="sd"></span>/-</h3>
+
+       </div>
+
+       <div class="price">
+        <h4 style="font-size: 1.3rem; font-weight: bolder; letter-spacing: 5px;">Delivery Charge</h4>
+        <h3 style="margin-left: 190px; font-size: 1.4rem; font-weight: bolder;">45/-</h3>
+
+       </div>
+
+       <div class="price">
+        <h4 style="font-size: 1.3rem; font-weight: bolder; letter-spacing: 5px;">Total Prices</h4>
+        <h3 style="margin-left: 240px; font-size: 1.4rem; font-weight: bolder;"><span id="cx"></span>/-</h3>
+
+       </div>
+
+       <a href="addtocartpage.php?id=<?php echo $id ;?> & uid=<?php echo $userid; ?>"><input type="submit" value="Back" class="btn" style="margin-left: 100px; box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);" ></a>
+
+    </div>
+    <div class="paymentmethod">
+        <div class="orderaddre" style="text-align: center;">
+            <h2 style="letter-spacing: 15px;">Payment Type</h2>
+            <div class="paytype" style="margin-left:60px;">
+                <img src="img/bkash.jpg" alt="" id="bkask" title="bkash payment" onclick="bkashclick()">
+                <img src="img/cashin.png" alt="" id="cashin" title="Cash in payment" onclick="cashclick()" >
+                <img src="img/card.png" alt="" title="card payment" onclick="cardclick()">
     
+            </div>
+          <div class="bkash" id="bkashback">
+              <img src="img/bkash.jpg" alt=""><br>
+              
+              <input type="text" placeholder="Enter your mobile number" id="id" required>
+              <input type="password" placeholder="Enter your password" id="pass" required>
+            <input type="submit" value="Confirm" class="btn" style=" box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);" onclick="paymentsuccess()" >
+            
+          </div>
+
+          <div class="bkash" id="cashback">
+            <img src="img/cashin.png" alt=""><br>
+            
+            <input type="submit" value="Confirm" class="btn" style=" box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);" onclick="cashsuccess()" >
+        
+        </div>
+        <div class="bkash " id="cardback">
+            <img src="img/card.png" alt=""><br>
+            
+            <input type="text" placeholder="Enter your user id" id="id" required>
+            <input type="password" placeholder="Enter your password" id="pass" required>
+            <input type="submit" value="Confirm" class="btn" style=" box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);" onclick="paymentsuccess()" >
+            
+        </div>
+        </div>
+        
+
+
+    </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/project/js/jquery.nice-number.js"></script>
+    <script src="js/jquery.nice-number.js"></script>
 
     <script>
 
@@ -138,12 +212,58 @@ $userid=$_GET['uid'];
             $('input[type="number"]').niceNumber();
 
             });
-
-
-            
-
-    
     </script>
+     
+         <script>
+              function cl(){
+                document.getElementById("back").style.display = "block";
+            var value=document.getElementById("value").value;
+            document.getElementById("xy").innerHTML=value;
+            var price=document.getElementById("price").innerHTML;
+            document.getElementById("zx").innerHTML=price;
+            document.getElementById("sd").innerHTML=(value*price);
+            document.getElementById("cx").innerHTML=(value*price)+45;
+            
+        }
+        function paymentsuccess(){
+            var x=document.getElementById("id").value;
+            var y=document.getElementById("pass").value;
+            if(x!="" && y!="")
+            {
+             swal('Good job!', 'Order is Successful received.', 'success');
+            
+            }
+            else
+            {
+             swal('Sorry!', 'Please Enter Required section .', 'error');
+            }
+            
+        }
+        function cashsuccess(){
+            
+             swal('Good job!', 'Order is Successful received.', 'success');
+            
+            
+        }
+       
+     
+               function bkashclick(){
+                     
+                     document.getElementById("bkashback").style.display = "block";
+                     document.getElementById("cardback").style.display = "none";
+                     document.getElementById("cashback").style.display = "none";
+                   }
+                   function cashclick(){
+                     document.getElementById("bkashback").style.display = "none";
+                     document.getElementById("cashback").style.display = "block";
+                     document.getElementById("cardback").style.display = "none";
+                   }
+                   function cardclick(){
+                     document.getElementById("bkashback").style.display = "none";
+                     document.getElementById("cashback").style.display = "none";
+                     document.getElementById("cardback").style.display = "block";
+                   }
+         </script>
     
 </body>
 </html>

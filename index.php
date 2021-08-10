@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/indexpage.css">
+    <link rel="stylesheet" href="views/css/indexpage.css">
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon" >
     <title>Food-hub</title>
 </head>
 <body>
     <div class="resta-logo">
-    <img src="img/LOGO.jpg" alt="">
+    <img src="Views/img/LOGO.jpg" alt="">
     </div>
     <section id="bar">
         <div class="logo">
@@ -40,7 +40,7 @@
             for you to larem ipsum dolor sit amet comsectuere adispiscing.</p>
        </div>
        <div class="log">
-        <a href="views/login.php">
+        <a href="Views/Login.php">
             <button class="btn">
                 LOG-IN
             </button>

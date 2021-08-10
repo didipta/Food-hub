@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
       $productname = $_POST['productname'];
      $price = $_POST['productprice'];
-     $productprice="Only ".$price."/-";
+     $productprice=$price;
      $filename = $_FILES['imgfile']['name'];
      $productimg="img/$filename";
      $productType=$_POST['productType'];

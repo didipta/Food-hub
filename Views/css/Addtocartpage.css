@@ -459,3 +459,107 @@ a{
     
    
 }
+.payment
+{
+    width: 70%;
+    height: 600px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 15% ;
+    top: 5vw;
+    box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);
+    border-radius: 10px;
+    display:none;
+    
+}
+
+.payment h1
+{
+    text-align: center;
+    padding: 10px;
+    background-image: linear-gradient(45deg,rgb(184, 51, 245),rgb(255, 64, 64));
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.orderaddre
+{
+    width: 100%;
+    height: 180px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 50px;
+    font-weight: 900;
+    color: rgb(32, 32, 32);
+  
+}
+.price
+{
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 20px;
+    display:flex;
+}
+.paymentmethod
+{
+    float: left;
+    margin-left: 15px;
+}
+.paytype
+{
+    display: flex;
+   
+    
+}
+.paytype img
+{
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(129, 129, 129);
+    margin: 10px;
+    cursor: pointer;
+}
+.paytype img:hover
+{
+    border: 2px solid rgb(8, 126, 236);
+}
+.bkash
+{
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);
+    border-radius: 10px;
+    display:inline-block;
+    margin-top: 30px;
+    display:none;
+
+}
+.bkash img
+{
+    width: 150px;
+    height: 100px;
+   
+  
+}
+.bkash input
+{
+
+    display: block;
+    width: 350px;
+    height: 40px;
+    border:none;
+    outline: none;
+    box-shadow: 1px 1px 1px 1px rgba(182, 182, 182, 0.548);
+    margin-top: 20px;
+    padding-left: 20px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+}

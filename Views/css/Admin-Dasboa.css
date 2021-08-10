@@ -22,76 +22,8 @@ a{
     text-decoration: none;
 }
 
-.res-logo img
-{
-    display: inline;
-  width: 36%;
-  position: relative;
-  border-radius: 50px;
-  color: #000;
-  margin: 10px;
-}
-#nav 
-{
-    width:17% ;
-    height: 47vw;
-    background-color: #ffffff;
-    font-size: 1.1rem;
-    position: fixed;
-    padding: 10px;
-    flex-wrap:wrap;
-    display:flex;
-    z-index: 1;
-    
-}
-.logo-title h2 , #view h2
-{
-   font-size: 1.5rem;
-   margin-top: 10px;
-   font-family: 'Kirang Haerang', cursive;
-   font-size: 1.3rem;
-}
-.navigation ul{
-    float: left;
-    margin-left: -20px;
-    margin-top: 5px;
-    padding-top: 10px;
-   
-}
-.navigation ul li 
-{
-    display:block;
-    line-height: 19px;
-    margin: 5px 8px;
-    padding-top: 4px;
-    line-height: 40px;
-    
-}
-.navigation ul li a
-{
-   padding: 5px 10px;
-   border-radius: 3px;
-   color: rgba(68, 68, 97, 0.788);
-   font-weight: 800;
-   font-size: 1.1rem;
-    
-}
-.navigation a{
-    color:#000000;
-    font-family: 'Chewy', cursive;
-    font-weight: bolder;
-    margin: 9px;
-    padding: 4px;
-}
-.navigation a:hover{
-    width:100% ;
-    text-align: center;
-    background-color: rgb(59, 121, 214);
-    border-radius: 3px;
-    color: rgb(255, 255, 255);
-    transition: 1s;
-   
-}
+
+
 #view
 {
     background-color: #ffffff;

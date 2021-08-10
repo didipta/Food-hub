@@ -16,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food-Hub Sign-up</title>
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="/project/css/log-in.css">
-    <link rel="stylesheet" href="/project/css/signup.css">
+    <link rel="stylesheet" href="css/log-in.css">
+    <link rel="stylesheet" href="css/signup.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -34,7 +34,8 @@
 </head>
 <body>
 
-<?php include 'database/signuppage.php';?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/Food-Hub-restaurant/Controller/signuppage.php';?>
+
     <section name="login" id="Sign-up">
         
         <form action="#" class="sign-up-form" method="POST">
@@ -90,7 +91,7 @@
             <p style="font-style: italic; text-align: center;">
                 You Have an Account Yet? please Sing in your own account.......
             </p>
-            <a href="login.php">
+            <a href="Login.php">
                 <button class="btn"  style="margin-left: 150px;">
                     Sign In
                   </button>

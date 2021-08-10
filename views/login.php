@@ -1,4 +1,5 @@
 <?php
+session_start();
 $userid="";
 if(!empty($_POST["uname"])) {
 	setcookie ("uname",$_POST["uname"],time()+ (86400 * 30), "/");
@@ -35,7 +36,7 @@ else {
           if($num == 1){
 
             
-            header("Location: http://localhost/project/views/homepage.php?id=$userid");
+            header("Location: http://localhost/Food-Hub-restaurant/Views/homepage.php?id=$userid");
           }
           else
           {
@@ -61,7 +62,7 @@ else {
           $num= mysqli_num_rows($q);
           if($num == 1){
 
-        header("Location: http://localhost/project/views/Admindashboard.php?id=$userid");
+        header("Location: http://localhost/Food-Hub-restaurant/Views/Admindashboard.php?id=$userid");
           }
 
           else
@@ -74,9 +75,31 @@ else {
            
           }
       }
-      elseif(substr($userid,0,4)=="110-" && $Password=="1234")
+      elseif(substr($userid,0,4)=="110-")
       {
-        header('Location: http://localhost/project/views/Staffdashboard.php');
+        $sql="SELECT *FROM employee where User_id= '$userid' AND cPassword= '$Password' ";
+        $con=mysqli_connect('localhost','root');
+        mysqli_select_db($con,'registrationbd');
+
+          $q= mysqli_query($con,$sql);
+          $num= mysqli_num_rows($q);
+          if($num == 1){
+        
+        if(isset($_POST['submit'])){
+          $_SESSION['uname'] = $userid;
+            header('Location: http://localhost/Food-Hub-restaurant/Views/Staffdashboard.php');
+          }
+        }
+        else
+        {
+          $error="please right user-id or password provide...!!";
+          $style="#log-in{ background-color: rgba(255, 0, 0, 0.507); border: 1px solid rgb(253, 95, 95);}
+          .input-field{ border: .5px solid rgb(253, 95, 95);}
+          ";
+         $worning= "<i class='fa fa-exclamation-circle' aria-hidden='true'></i>";
+         
+        }
+        
       }
       else
       {
@@ -136,7 +159,7 @@ else {
 
 
 
-            <input type="submit" value="Sign In"  class="btn">
+            <input type="submit" value="Sign In" name="submit" class="btn">
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -158,7 +181,7 @@ else {
     </section>
 
 <div class="circul">
-<a href="/project/index.php">
+<a href="/Food-Hub-restaurant/index.php">
     <img src="img/LOGO.jpg" alt="">
 </a>
 <div class="signup">

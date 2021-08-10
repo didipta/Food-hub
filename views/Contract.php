@@ -7,13 +7,13 @@
         <title>CONTRACT US</title>
         
 
-        <link rel = "stylesheet" type = "text/css" href = "/project/css/Contract.css">
+        <link rel = "stylesheet" type = "text/css" href = "css/Contract.css">
         <script src="https://kit.fontawesome.com/ec8ab4f226.js" crossorigin="anonymous"></script>
     
     </head>
     <body>
     <div class="resta-logo">
-    <a href="/project/index.php">
+    <a href="/Food-Hub-restaurant/index.php">
     <img src="img/LOGO.jpg" alt="">
 </a>
     </div>

@@ -6,14 +6,14 @@
         <title>
             ABOUT US
         </title>
-        <link rel = "stylesheet" type = "text/css" href = "/project/css/about.css">
+        <link rel = "stylesheet" type = "text/css" href = "css/about.css">
         <script src="https://kit.fontawesome.com/ec8ab4f226.js" crossorigin="anonymous"></script>
         <link rel="icon" href="img/LOGO.jpg" type="image/x-icon" >
     </head>
     <!--BODY-->
     <body>
     <div class="resta-logo">
-        <a href="/project/index.php">
+        <a href="/Food-Hub-restaurant/index.php">
     <img src="img/LOGO.jpg" alt="">
 </a>
     </div>

@@ -1,5 +1,7 @@
 <?php
-require_once('./database/createDb.php');
+session_start();
+$userid=$_SESSION['uname'];
+require_once($_SERVER['DOCUMENT_ROOT'].'/Food-Hub-restaurant/Model(database)/productdatabase.php');
 
 $database=new createDb("Productdb","ProductTB");
 
@@ -14,8 +16,8 @@ $rowstatus=0;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/project/css/STaff-dashboad.css">
-    <link rel="stylesheet" href="http://localhost/project/css/calendar.css">
+    <link rel="stylesheet" href="css/STaff-dashboad.css">
+    <link rel="stylesheet" href="css/calendar.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

@@ -1,6 +1,5 @@
 <?php
-require_once('./database/createDb.php');
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/Food-Hub-restaurant/Model(database)/productdatabase.php');
 $asd="";
 $database=new createDb("Productdb","ProductTB");
 
@@ -16,10 +15,11 @@ $asdw=$_GET['type'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/project/css/ALLPROdu.css">
+    <link rel="stylesheet" href="css/ALLPRODu.css">
+    <script src="jquery.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <title>Document</title>
 
     <style>
@@ -69,9 +69,13 @@ $asdw=$_GET['type'];
 </form>
       </section>
 
+   
+
+
 
       <section id="show-table">
 
+     
         
       <div class="live-search">
     <input type="text" name="search-live" id="search-live" placeholder="Search by product name....." >
@@ -79,61 +83,62 @@ $asdw=$_GET['type'];
     </div><br/>
     <div id="result-search"></div><br/>
 
-    
-      <div style="text-align: center; font-size: 1.2rem; font-weight: 900; margin: 10px;">List All Products</div>
-<table class="list-table">
-  <tr class="list-td">
-    <th>id</th>
-    <th>name</th>
-    <th>price</th>
-    <th>type</th>
-    <th>img</th>
-    <th>status</th>
-    <th>Action</th>
-  </tr>
-  <?php
-               
-               $result=$database->getData();
-               while ($row=mysqli_fetch_assoc($result)){
-               $a=$row['id'];
-               $b=$row['product_name'];
-               $c=$row['product_price'];
-               $d=$row['product_img'];
-               $f=$row['product_type'];
-               $g=$row['product_status'];
-               $ch="";
-               if($g== "on"){$x="checked"; $rowstatus++;}
-               else{$x="";}
-               $rows=$rows+1;
-                echo"
-                <tr class='list-tr'>
-                <td>$a</td>
-                <td>$b</td>
-                <td>$c</td>
-                <td>$f</td>
-                <td>$d</td>
-              
-                
-                
-                <td><label class='switch'>
-              <input type='checkbox'  onclick='status($a)' id='check' $x >
-              <span class='slider round'></span>
-            </label></td>
 
-            <td class='setting'><i class='fa fa-cog' aria-hidden='true'></i>
-            <div class='edit-delet'>
-            <div style=' '> <a href='product.php?eid=$a & type=block'><input type='submit' value='Edit' style='cursor: pointer; background:none; border:none;' onclick='edits()' id='check'></a></div>
-                <div style=' '> <input type='submit' value='Delete' style='cursor: pointer; background:none; border:none;' onclick='deletes($a)' id='check'></div>
-            </div>
 
-              </tr> 
-                
-                ";
-                
-               }
-               
-                ?>
-</table>
+          <div style="text-align: center; font-size: 1.2rem; font-weight: 900; margin: 10px;">List All Products</div>
+          <table class="list-table">
+            <tr class="list-td">
+              <th>id</th>
+              <th>name</th>
+              <th>price</th>
+              <th>type</th>
+              <th>img</th>
+              <th>status</th>
+              <th>Action</th>
+            </tr>
+            <?php
+                        
+                        $result=$database->getData();
+                        while ($row=mysqli_fetch_assoc($result)){
+                        $a=$row['id'];
+                        $b=$row['product_name'];
+                        $c=$row['product_price'];
+                        $d=$row['product_img'];
+                        $f=$row['product_type'];
+                        $g=$row['product_status'];
+                        $ch="";
+                        if($g== "on"){$x="checked"; $rowstatus++;}
+                        else{$x="";}
+                        $rows=$rows+1;
+                          echo"
+                          <tr class='list-tr'>
+                          <td>$a</td>
+                          <td>$b</td>
+                          <td>$c</td>
+                          <td>$f</td>
+                          <td>$d</td>
+                        
+                          
+                          
+                          <td><label class='switch'>
+                        <input type='checkbox'  onclick='status($a)' id='check' $x >
+                        <span class='slider round'></span>
+                      </label></td>
+
+                      <td class='setting'><i class='fa fa-cog' aria-hidden='true'></i>
+                      <div class='edit-delet'>
+                      <div style=' '> <a href='product.php?eid=$a & type=block'><input type='submit' value='Edit' style='cursor: pointer; background:none; border:none;' onclick='edits()' id='check'></a></div>
+                          <div style=' '> <input type='submit' value='Delete' style='cursor: pointer; background:none; border:none;' onclick='deletes($a)' id='check'></div>
+                      </div>
+
+                        </tr> 
+                          
+                          ";
+                          
+                        }
+                        
+                          ?>
+          </table>
 
 
 </section>

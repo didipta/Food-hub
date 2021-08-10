@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Info</title>
-    <link rel="stylesheet" href="/project/css/Alluser.css">
+    <link rel="stylesheet" href="css/Alluser.css">
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon" >
 </head>
 <body>

@@ -1,7 +1,7 @@
 <?php
 
 require_once('./component/foodcomeponent.php');
-require_once('./database/createDb.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/Food-Hub-restaurant/Model(database)/productdatabase.php');
 
 $database=new createDb("Productdb","ProductTB");
 ?>
@@ -41,7 +41,7 @@ $userid=$_GET['id'];
        
             <div class="navigation">
             <ul>
-                <li><a href="Homepage.php" ><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a></li> 
+                <li><a href="homepage.php?id=<?php echo $userid ;?>" ><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a></li> 
                 <li><a href="#"><i class="fa fa-th-large" aria-hidden="true"></i>&nbsp;Special Menu</a></li>
                 <li><a href="#" style="background-color: rgba(185, 185, 185, 0.534); border-radius: 3px; color: #000;"><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;Foods</a></li>
                 <li><a href="#"><i class="fa fa-glass" aria-hidden="true"></i>&nbsp;Drinks</a></li> 

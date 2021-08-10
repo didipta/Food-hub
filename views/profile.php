@@ -110,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sqla="UPDATE usertb SET  cPassword='$newpass' WHERE User_id='$uid'";
         mysqli_query($con,$sqla);
         echo $cookie;
-        $messagev="<a href='http://localhost/project/views/login.php'>Password Changed Successfully.clicke here</a>";
+        $messagev="<a href='http://localhost/Food-Hub-restaurant/Views/login.php'>Password Changed Successfully.clicke here</a>";
         
         
     }

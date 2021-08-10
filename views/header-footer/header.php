@@ -135,7 +135,7 @@ a{
 
 <div class="logo">
         <div class="logo-head">
-        <a href="http://localhost/project/views/homepage.php?id=<?php echo $userid ;?>"">
+        <a href="http://localhost/Food-Hub-restaurant/Views/homepage.php?id=<?php echo $userid ;?>"">
             <img src="img/LOGO.jpg" alt="">
             <h1>Foob-hub Restaurant</h1>
          </a>
@@ -147,14 +147,14 @@ a{
           <li class="profile"><a href="#"><i class="fa fa-user icon" aria-hidden="true"></i>&nbsp;@<?php $name=substr($username,0,5); echo $name ;?></a>
             <div class="sub-menu">
                 <ul>
-                    <li><a href="http://localhost/project/views/profile.php?id=<?php echo $userid ;?>">Profile</a></li>
+                    <li><a href="http://localhost/Food-Hub-restaurant/Views/profile.php?id=<?php echo $userid ;?>">Profile</a></li>
                     <li><a href="#">My order</a></li>
                     <li><a href="#">Vouchers </a></li>
                     <li><a href="#">Refund Account</a></li>
                 </ul>
             </div>
         </li> 
-        <li><a href="http://localhost/project/views/login.php" ><i class="fa fa-sign-out icon" aria-hidden="true"></i>&nbsp;Log-out</a></li>
+        <li><a href="http://localhost/Food-Hub-restaurant/Views/login.php" ><i class="fa fa-sign-out icon" aria-hidden="true"></i>&nbsp;Log-out</a></li>
         <li style="width: 70px;"> <a href="#" ><i class="fa fa-shopping-cart icon" aria-hidden="true"></i></a></li>
 
       </ul>

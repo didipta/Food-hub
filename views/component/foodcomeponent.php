@@ -4,7 +4,7 @@ function foodproducts($poproductname,$poproductprice,$productimg ,$producttype,$
      <div class='food $producttype $status'>
      <img src='$productimg'>
     <h3>$poproductname</h3>
-    <h4>$poproductprice</h4>
+    <h4>Only $poproductprice/-</h4>
     </div>
 
     ";

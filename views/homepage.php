@@ -14,7 +14,7 @@ $userid=$_GET['id'];
     <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="http://localhost/project/css/home-page.css">
+    <link rel="stylesheet" href="css/home-page.css">
     <title>Home</title>
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon" >
     <style>
