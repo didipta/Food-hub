@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+*
+{
+    margin-top: 0px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    
+}
+
+body
+{
+    background-color: #ffffff;
+    padding: 0;
+    display:grid;
+    transition: .5s;
+}
+div
+{
+    transition-delay: .1s;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#Sign-up
+{
+  width: 65%;
+  height: 700px;
+  background-color: rgba(255, 255, 255, 0.507);
+  border-radius: 10px;
+  position: absolute;
+  left:30%;
+  top: 2%;
+  font-weight: 900;
+  box-shadow: 0px 1px 10px 0px rgba(104, 104, 104, 0.548);
+  padding: 20px;
+}
+
+
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 5rem;
+    transition: all 0.2s 0.7s;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+ 
+  
+  form.sign-in-form {
+    z-index: 2;
+  }
+  
+  .title {
+      width: 700px;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg,rgb(86, 86, 255),rgb(86, 255, 247));
+
+
+  }
+  select
+  {
+      background: none;
+      border: none;
+      outline:none;
+  }
+  .input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #525252;
+    transition: 0.5s;
+    font-size: 1.1rem;
+  }
+  
+  .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    
+   
+  }
+  
+  .input-field input::placeholder {
+    color: rgb(146, 145, 145);
+    font-weight: 500;
+
+  }
+  
+  
+  
+  .btn {
+    width: 150px;
+    background-color: #5995fd;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+  
+  }
+  
+  .btn:hover {
+    background-color: #4d84e2;
+  }
+ .eye
+ {
+     position:absolute;
+     left: 45vh;
+     cursor: pointer;
+     
+ }
+ .eye i
+ {
+  color: rgba(128, 121, 121, 0.781);
+ }
+ #order-list
+{
+    
+    position: absolute;
+    left: 27%;
+    top:50vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(82, 82, 85, 0.2) 1px 1px 15px 1px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.list-table 
+{
+    width:1000px;
+    height: 150px;
+    text-align: center;
+    padding: 20px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.list-td
+{
+    height: 50px;
+    background-color: rgb(145, 145, 236);
+    color: rgb(255, 255, 255);
+    
+}
+.list-tr
+{
+    height: 50px;
+    color: rgb(58, 54, 54);
+    font-weight: 700;
+}
+.list-tr:hover{
+    background-color: rgb(223, 228, 252);
+    box-shadow: rgba(82, 82, 85, 0.2) 10px 10px 15px 1px;
+}
+.edit-delet
+{
+    width: 70px;
+    height: 50px;
+    background-color: rgb(252, 252, 252);
+    text-align: center;
+    padding: 2px;
+    margin-left: -5px;
+    margin-top: -35px;
+    color: rgb(22, 22, 22);
+    font-weight: 500;
+    position: absolute;
+    display: none;
+    box-shadow: rgba(82, 82, 85, 0.2) 1px 1px 5px 1px;
+
+}
+.edit-delet p{
+    cursor: pointer;
+   
+}
+.setting:hover .edit-delet
+{
+    display: block;
+    transition: .5s;
+}
