@@ -47,7 +47,7 @@ $userid=$_GET['uid'];
                 <div class="img"><img src="<?php echo $productimg; ?>" alt=""></div>
                 <div class="title"> 
 
-                    <h1><?php echo $productname;?></h1>
+                    <h1 id="productname"><?php echo $productname;?></h1>
                     <p>Very tasty!!!</p>
                     <div class="price-number">
                     <div class="input"><input type="number" name="" id="value" value="1" min="1" ></div>
@@ -55,7 +55,10 @@ $userid=$_GET['uid'];
                     </div> 
                     
                     <input type="submit" value="Add to cart " class="btn" onclick="cl()" >
-
+                <p id="username" style="display:none;"><?php echo $username;?></span></p>
+                <p id="userid" style="display:none;"><?php echo $userid;?></span></p>
+                <p id="userpho" style="display:none;"><?php echo $phone;?></span></p>
+                <p id="useremail" style="display:none;"><?php echo $Email;?></span></p>
                
             </div>
            
@@ -136,8 +139,8 @@ $userid=$_GET['uid'];
        <h1>CONFIRMATION</h1>
        <div class="paymentmethod">
        <div class="orderaddre">
-           <span style="display: flex;">Order number:  <p style="padding-left: 10px; color: rgb(56, 149, 255);">FOHD#1231543123</p></span>
-           <p style=" color: rgb(105, 105, 105);"><?php echo $address;?> </p>
+           <span style="display: flex;" >Order number:  <p style="padding-left: 10px; color: rgb(56, 149, 255);" id="orderid">FOHD#<?php echo ($numor+1235445);?></p></span>
+           <p style=" color: rgb(105, 105, 105);" id="address"><?php echo $address;?> </p>
            <h2 style="font-size: 1.7rem; color: rgb(0, 0, 0);letter-spacing: 3px;"><?php echo $productname?></h2>
        </div>
        <div class="price">
@@ -176,7 +179,7 @@ $userid=$_GET['uid'];
               
               <input type="text" placeholder="Enter your mobile number" id="id" required>
               <input type="password" placeholder="Enter your password" id="pass" required>
-            <input type="submit" value="Confirm" class="btn" style=" box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);" onclick="paymentsuccess()" >
+            <input type="submit" value="Confirm" class="btn" style=" box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);" onclick="paymentsuccessbkask()" >
             
           </div>
 
@@ -189,9 +192,9 @@ $userid=$_GET['uid'];
         <div class="bkash " id="cardback">
             <img src="img/card.png" alt=""><br>
             
-            <input type="text" placeholder="Enter your user id" id="id" required>
-            <input type="password" placeholder="Enter your password" id="pass" required>
-            <input type="submit" value="Confirm" class="btn" style=" box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);" onclick="paymentsuccess()" >
+            <input type="text" placeholder="Enter your user id" id="idC" required>
+            <input type="password" placeholder="Enter your password" id="passC" required>
+            <input type="submit" value="Confirm" class="btn" style=" box-shadow: 5px 5px 5px 5px rgba(182, 182, 182, 0.548);" onclick="paymentsuccesscard()" >
             
         </div>
         </div>
@@ -204,6 +207,7 @@ $userid=$_GET['uid'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/jquery.nice-number.js"></script>
+    <script src="js/addtocard.js"></script>
 
     <script>
 
@@ -213,57 +217,5 @@ $userid=$_GET['uid'];
 
             });
     </script>
-     
-         <script>
-              function cl(){
-                document.getElementById("back").style.display = "block";
-            var value=document.getElementById("value").value;
-            document.getElementById("xy").innerHTML=value;
-            var price=document.getElementById("price").innerHTML;
-            document.getElementById("zx").innerHTML=price;
-            document.getElementById("sd").innerHTML=(value*price);
-            document.getElementById("cx").innerHTML=(value*price)+45;
-            
-        }
-        function paymentsuccess(){
-            var x=document.getElementById("id").value;
-            var y=document.getElementById("pass").value;
-            if(x!="" && y!="")
-            {
-             swal('Good job!', 'Order is Successful received.', 'success');
-            
-            }
-            else
-            {
-             swal('Sorry!', 'Please Enter Required section .', 'error');
-            }
-            
-        }
-        function cashsuccess(){
-            
-             swal('Good job!', 'Order is Successful received.', 'success');
-            
-            
-        }
-       
-     
-               function bkashclick(){
-                     
-                     document.getElementById("bkashback").style.display = "block";
-                     document.getElementById("cardback").style.display = "none";
-                     document.getElementById("cashback").style.display = "none";
-                   }
-                   function cashclick(){
-                     document.getElementById("bkashback").style.display = "none";
-                     document.getElementById("cashback").style.display = "block";
-                     document.getElementById("cardback").style.display = "none";
-                   }
-                   function cardclick(){
-                     document.getElementById("bkashback").style.display = "none";
-                     document.getElementById("cashback").style.display = "none";
-                     document.getElementById("cardback").style.display = "block";
-                   }
-         </script>
-    
 </body>
 </html>

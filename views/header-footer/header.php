@@ -12,6 +12,20 @@ $phone=$data['Phone_number'];
 $pasw=$data['cPassword'];
 
 ?>
+<?php
+  $conor=mysqli_connect('localhost','root');
+  mysqli_select_db($conor,'Productdb');
+
+  $qor="SELECT *FROM product_orders";
+  $quser="SELECT *FROM product_orders where userid= '$userid'";
+  $resultor= mysqli_query($conor, $qor);
+  $resultuser= mysqli_query($conor, $quser);
+   $numor= mysqli_num_rows($resultor);
+
+
+?>
+
+
 
 <style>
 a{
@@ -160,3 +174,4 @@ a{
       </ul>
 
     </div>
+

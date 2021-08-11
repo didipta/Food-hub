@@ -28,7 +28,7 @@ $cookie='setcookie ("password","",time()-3600, "/");';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/project/css/Profile-user.css">
+    <link rel="stylesheet" href="css/PROfile-User.css">
    
     <title>Profile</title>
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon" >
@@ -158,6 +158,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             MY PAYMENTS
         </h1>
     </div>
+    <table  class="order-table">
+        <tr  class="order-td">
+            <th>Order Id </th>
+            <th>Product name</th>
+            <th>Qantity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Payment type</th>
+            
+    </tr>
+    <?php
+     while ($rows=mysqli_fetch_assoc($resultuser)){
+         $orderid=$rows['orderid'];
+         $productname=$rows['Productname'];
+         $price=$rows['toprice'];
+         $status=$rows['Statues'];
+         $Qantity=$rows['Qantity'];
+         $paytype=$rows['paymenttype'];
+        echo "<tr class='order-tr'>
+        <td style='color:rgb(255, 0, 255);'>$orderid</td>
+        <td>$productname</td>
+        <td> $Qantity</td>
+        <td> $price</td>
+        <td style='color:rgb(66, 113, 252);'>$status</td>
+        <td>$paytype</td>
+      
+       </tr>";
+     }
+     ?>
+    </table>
   </section>
 </section>
 
