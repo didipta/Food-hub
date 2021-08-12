@@ -1,4 +1,5 @@
 <?php
+$message="";
 $username=$salary=$address=$email=$phn=$uid=$password= $employetype="";
 $messagebox2="<script>  swal('Good job!', 'Registration is Successful. User id is $uid', 'success');</script>";
 

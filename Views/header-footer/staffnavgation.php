@@ -85,13 +85,32 @@
              <li ><a href="Staffdashboard.php" class="Dashboard" style="" ><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a></li> 
             <li><a href="product.php?eid= & type=" class="Additeam"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></i></i>&nbsp;Add items</a></li>
             <li><a href="#" class="Customers"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;Customers</a></li>
-            <li><a href="#" class="Orders"><i class="fa fa-cart-plus" aria-hidden="true"></i></i>&nbsp;Orders</a></li> 
-            <li><a href="Aboutus.php" class="Shipping"><i class="fa fa-truck" aria-hidden="true"></i>&nbsp;Shipping</a></li>
+            <li><a href="stafforder.php?eid= & type=" class="Orders"><i class="fa fa-cart-plus" aria-hidden="true"></i></i>&nbsp;Orders info</a></li> 
+            <li><a href="" class="Shipping"><i class="fa fa-truck" aria-hidden="true"></i>&nbsp;Shipping</a></li>
             <li><a href="#" class="Delivery"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;Delivery info</a></li>
-            <li><a href="Aboutus.php" class="Stock"><i class="fa fa-hdd-o" aria-hidden="true"></i>&nbsp;Stock</a></li>
+            <li><a href="" class="Stock"><i class="fa fa-hdd-o" aria-hidden="true"></i>&nbsp;Stock</a></li>
             <li><a href="#" class="offer"><i class="fa fa-gift" aria-hidden="true"></i> &nbsp;offer</a></li>
             <li><a href="login.php" ><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log-out</a></li>
         </ul>
         </div>
 
+    
+    
     </section>
+
+    <?php
+
+$con=mysqli_connect('localhost','root');
+mysqli_select_db($con,'registrationbd');
+$ql="SELECT *FROM employee where User_id= '$userid'";
+$result= mysqli_query($con, $ql);
+$data=mysqli_fetch_assoc($result);
+   $username1=$data['Username'];
+   $address1=$data['Address'];
+   $Email1=$data['Email'];
+   $uid1=$data['User_id'];
+   $phone1=$data['Phone_number'];
+   $pasw1=$data['cPassword'];
+   $employeetype1=$data['Employetype'];
+   $salary1=$data['Salary'];
+?>

@@ -21,7 +21,7 @@ $userid=$_GET['id'];
         <title>
             FOOD
         </title>
-        <link rel="stylesheet" href="/project/css/Foodsme.css">
+        <link rel="stylesheet" href="css/Foodsme.css">
         <script src="https://kit.fontawesome.com/ec8ab4f226.js" crossorigin="anonymous"></script>
         <style>
             *{

@@ -1,4 +1,5 @@
 <style>
+
 .res-logo img
 {
     display: inline;
@@ -10,7 +11,7 @@
 }
 #nav 
 {
-    width:18% ;
+    width:20% ;
     height: 47vw;
     background-color: #ffffff;
     font-size: 1.1rem;
@@ -18,7 +19,6 @@
     padding: 10px;
     flex-wrap:wrap;
     display:flex;
-    z-index: 1;
     
 }
 .logo-title h2 , #view h2
@@ -63,16 +63,16 @@
 .navigation a:hover{
     width:100% ;
     text-align: center;
-    background-color: rgb(59, 121, 214);
+    background-color: rgb(82, 82, 82);
     border-radius: 3px;
     color: rgb(255, 255, 255);
     transition: 1s;
    
 }
 
+
+
 </style>
-
-
 
 <section id="nav">
         <div class="res-logo">
@@ -82,16 +82,28 @@
          
         <ul>
             <li style="padding-left: 15px; font-weight: 900;">Menu</li>
-             <li><a href="Admindashboard.php" class="Dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a></li> 
-            <li><a href="adminproduct.php?eid= & type=" class="Additeam"><i class="fa fa-cutlery" aria-hidden="true"></i></i>&nbsp;All iteam</a></li>
-            <li><a href="Addemployees.php" class="Employeess"><i class="fa fa-puzzle-piece" aria-hidden="true"></i>&nbsp;Add Employees</a></li>
-            <li><a href="Alluserinfo.php" class="User"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;All User</a></li> 
-            <li><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Categories</a></li>
-            <li><a href="orderinfo.php" class="orders"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;Order info</a></li>
-            <li><a href="#"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;Roles</a></li>
-            <li><a href="#"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;privacy Policy</a></li>
-            <li><a href="login.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log-out</a></li>
+             <li ><a href="delimandasboard.php" class="Dashboard" style="" ><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a></li> 
+            <li><a href="deliveryinfo.php?eid= & type=" class="Status"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></i></i>&nbsp;Delivery Status</a></li>
+            <li><a href="#" class="Delivery"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;Delivery info</a></li>
+            <li><a href="login.php" ><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Log-out</a></li>
         </ul>
         </div>
 
     </section>
+
+
+<?php
+$con=mysqli_connect('localhost','root');
+mysqli_select_db($con,'registrationbd');
+$ql="SELECT *FROM employee where User_id= '$userid'";
+$result= mysqli_query($con, $ql);
+$data=mysqli_fetch_assoc($result);
+   $username=$data['Username'];
+   $address=$data['Address'];
+   $Email=$data['Email'];
+   $uid=$data['User_id'];
+   $phone=$data['Phone_number'];
+   $pasw=$data['cPassword'];
+   $employeetype=$data['Employetype'];
+   $salary=$data['Salary'];
+?>

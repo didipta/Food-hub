@@ -9,7 +9,7 @@ $productname =$productprice=$filename =$productimg=$productType="";
 $rows=0;
 $rowstatus=0;
 ?>
-
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,8 +90,8 @@ $rowstatus=0;
                 <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
                 <div class="title ptitle">
-                    <h3>Dipta Saha</h3>
-                    <h4>@diptasaha</h4>
+                <a href="staffprofile.php?id=<?php echo $userid;?>" style="color:black;"> <h3><?php echo $username1;?></h3></a>
+                    <h4>@<?php echo $username1;?></h4>
                 </div>
     
             </div>

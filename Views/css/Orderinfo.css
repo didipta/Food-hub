@@ -1,0 +1,74 @@
+
+#productupdate
+{
+    width: 40%;
+    height: 500px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    box-shadow: 1px 1px 1px 1px rgba(134, 134, 134, 0.548);
+    position: fixed;
+    border-radius: 3px;
+    margin-left: 500px;
+    display:none;
+    
+}
+.header h1
+{
+  margin: 0px;
+  padding: 0px;
+  background-color: #71afff;
+  text-align: center;
+  font-weight:bold;
+  color: #ffffff;
+  padding: 10px;
+}
+.addproduct
+{
+    
+    font-weight: bolder;
+    font-size: 1.1rem;
+    padding: 10px;
+    margin-left: 20px;
+}
+.addproduct input ,.selecttype
+{
+    width: 70%;
+    height: 30px;
+    background-color:  rgb(228, 222, 222);
+    border: none;
+    outline: none;
+    border: none;
+    box-shadow: .5px .5px .5px .5px rgba(161, 161, 161, 0.37);
+    font-size: .8rem; 
+    color: rgb(0, 0, 0);
+    font-weight:700;
+    padding-left:10px;
+    margin: 5px;
+    margin-left: 20px;
+    padding-top: 3px;
+   
+}
+.addproduct input:first-child
+{
+    margin: 10px;
+}
+
+.btn {
+  width: 36%;
+  border: none;
+  outline: none;
+  height: 35px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  margin-left: 60px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 900;
+  background-image: linear-gradient(45deg,rgb(34, 95, 226),rgb(62, 207, 207));
+  float: left;
+}
+
+.btn:hover {
+
+  color: rgb(0, 0, 0);
+}

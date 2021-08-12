@@ -1,5 +1,5 @@
 
-
+<?php include $_SERVER['DOCUMENT_ROOT'].'/Food-Hub-restaurant/Model(database)/employeedatabase.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +13,17 @@
    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emoloyee Add</title>
+    <style>
+       .navigation .Employeess{
+              background-color: rgb(59, 121, 214);
+             border-radius: 3px;
+              color: rgb(255, 255, 255);
+        }
+        </style>
 </head>
 <body>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/Food-Hub-restaurant/Model(database)/employeedatabase.php';?>
+
 <?php
 $con=mysqli_connect('localhost','root');
 mysqli_select_db($con,'registrationbd');
@@ -90,43 +97,44 @@ $results= mysqli_query($con, $ql);
         <div class="list-heading">
             <table  class="list-table">
                 <tr  class="list-td">
-                    <th>id </th>
+                    <th>User_id</th>
                     <th>Namee</th>
                     <th>Address</th>
+                    <th>Email</th>
                     <th>Salary</th>
-                    <th>User_id</th>
-                    <th>PhoneNum</th>
                     <th>Emptype</th>
-                    <th>Action</th>
+                    <th>PhoneNum</th>
+                    <th>Password</th>
             </tr>
-            <tr  class="list-tr">
-                <td>1</td>
-                <td>Dipta saha</td>
-                <td>road-18,nikunjo,dhaka</td>
-                <td>22,000</td>
-                <td>110-12342</td>
-                <td>0191302929</td>
-                <td>Staff</td>
-                <td class="setting"><i class="fa fa-cog" aria-hidden="true"></i>
-                <div class="edit-delet">
-                    <p>Delete</p>
-                </div>
-                </td>
-            </tr>
-            <tr  class="list-tr">
-                <td>1</td>
-                <td>Dipta saha</td>
-                <td>road-18,nikunjo,dhaka</td>
-                <td>22,000</td>
-                <td>110-12342</td>
-                <td>0191302929</td>
-                <td>Staff</td>
-                <td class="setting"><i class="fa fa-cog" aria-hidden="true"></i>
-                <div class="edit-delet">
-                    <p>Delete</p>
-                </div>
-                </td>
-            </tr>
+            <?php
+     $con=mysqli_connect('localhost','root');
+     mysqli_select_db($con,'registrationbd');
+     $ql="SELECT *FROM employee";
+     $result= mysqli_query($con, $ql);
+     
+     while ($data=mysqli_fetch_assoc($result)){
+        $username=$data['Username'];
+        $address=$data['Address'];
+        $Email=$data['Email'];
+        $uid=$data['User_id'];
+        $phone=$data['Phone_number'];
+        $pasw=$data['cPassword'];
+        $employeetype=$data['Employetype'];
+        $salary=$data['Salary'];
+      
+        echo "<tr class='alluser-tr'>
+        <td> $uid</td>
+        <td >$username</td>
+        <td>$address</td>
+        <td>$Email</td>
+        <td>$salary</td>
+        <td>$employeetype</td>
+        <td>$phone</td>
+        <td>$pasw</td>
+      
+       </tr>";
+     }
+     ?>
             
         </table>
     </div>

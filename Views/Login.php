@@ -101,6 +101,34 @@ else {
         }
         
       }
+
+      elseif(substr($userid,0,4)=="100-")
+      {
+        $sql="SELECT *FROM employee where User_id= '$userid' AND cPassword= '$Password' ";
+        $con=mysqli_connect('localhost','root');
+        mysqli_select_db($con,'registrationbd');
+
+          $q= mysqli_query($con,$sql);
+          $num= mysqli_num_rows($q);
+          if($num == 1){
+        
+        if(isset($_POST['submit'])){
+          $_SESSION['uname'] = $userid;
+            header('Location: http://localhost/Food-Hub-restaurant/Views/delimandasboard.php');
+          }
+        }
+        else
+        {
+          $error="please right user-id or password provide...!!";
+          $style="#log-in{ background-color: rgba(255, 0, 0, 0.507); border: 1px solid rgb(253, 95, 95);}
+          .input-field{ border: .5px solid rgb(253, 95, 95);}
+          ";
+         $worning= "<i class='fa fa-exclamation-circle' aria-hidden='true'></i>";
+         
+        }
+        
+      }
+
       else
       {
           $error="please right user-id or password provide...!!";
@@ -126,7 +154,7 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food-HubLOG-In</title>
     <link rel="icon" href="img/LOGO.jpg" type="image/x-icon" >
-    <link rel="stylesheet" href="/project/css/log-in.css">
+    <link rel="stylesheet" href="css/log-in.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

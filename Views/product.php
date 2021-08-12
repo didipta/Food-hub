@@ -1,4 +1,6 @@
 <?php
+session_start();
+$userid=$_SESSION['uname'];
 require_once($_SERVER['DOCUMENT_ROOT'].'/Food-Hub-restaurant/Model(database)/productdatabase.php');
 $asd="";
 $database=new createDb("Productdb","ProductTB");

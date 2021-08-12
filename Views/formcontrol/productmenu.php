@@ -24,7 +24,7 @@ mysqli_select_db($con,'Productdb');
  $sql="INSERT INTO `producttb` (`product_name`,`product_price`,`product_img`,`product_type`,`product_status`) VALUES ('$productname','$productprice','$productimg','$productType','$product_status') ";
  $q=mysqli_query($con,$sql);
 
- header("Location: http://localhost/project/views/product.php?eid= & type=");
+ header("Location: http://localhost/Food-Hub-restaurant/Views/product.php?eid= & type=");
   }
 ?>
 <?php
@@ -47,6 +47,6 @@ mysqli_select_db($con,'Productdb');
  $sqla="UPDATE `producttb` SET  product_name='$productnameed',product_price='$productpriceed',product_img='$productimged',product_type='$productTypeed',product_status='$product_statused' WHERE id='$ided'";
  $q1=mysqli_query($con,$sqla);
 
- header("Location: http://localhost/project/views/product.php?eid= & type=");
+ header("Location: http://localhost/Food-Hub-restaurant/Views/product.php?eid= & type=");
   }
 ?>
