@@ -90,8 +90,8 @@ $rowstatus=0;
                 <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
                 <div class="title ptitle">
-                <a href="staffprofile.php?id=<?php echo $userid;?>" style="color:black;"> <h3><?php echo $username1;?></h3></a>
-                    <h4>@<?php echo $username1;?></h4>
+                <a href="staffprofile.php?id=<?php echo $userid;?>" style="color:black;"> <h3><?php echo $username;?></h3></a>
+                    <h4>@<?php echo $username;?></h4>
                 </div>
     
             </div>

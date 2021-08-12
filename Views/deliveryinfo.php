@@ -144,6 +144,7 @@ $username=$data['username'];
         <option value="">--Select--</option>
         <option value='Your Order is Processing'> Your Order is Processing</option>
         <option value='Your Order is on the way'> Your Order is on the way</option>
+        <option value='Your Order is Cancelled'>Your Order is Cancelled</option>
         <option value='Wait Few minute'>Wait Few minute</option>
         <option value='You received the order already'>You received the order already</option>
     </select><br><br>
