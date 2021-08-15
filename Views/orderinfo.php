@@ -1,7 +1,4 @@
-<?php
-session_start();
-$userid=$_SESSION['uname'];
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +31,7 @@ $userid=$_SESSION['uname'];
             
 
 ?>
- <table  class="alluser-table" style="margin-left:-50px; width:1230px;">
+ <table  class="alluser-table" style="margin-left:-50px; width:1800px;">
         <tr  class="alluser-td">
             <th>Orderid</th>
             <th>Productname </th>

@@ -17,7 +17,7 @@ $pasw=$data['cPassword'];
   mysqli_select_db($conor,'Productdb');
 
   $qor="SELECT *FROM product_orders";
-  $quser="SELECT *FROM product_orders where userid= '$userid'";
+  $quser="SELECT *FROM product_orders where userid= '$userid' ORDER BY id DESC";
   $resultor= mysqli_query($conor, $qor);
   $resultuser= mysqli_query($conor, $quser);
    $numor= mysqli_num_rows($resultor);

@@ -39,7 +39,7 @@ $asdw=$_GET['type'];
 <section id="Add-product">
 
 
-<form action="./formcontrol/productmenu.php"class="sign-up-form" method="POST" enctype="multipart/form-data">
+<form action="./formcontrol/adminproduct.php"class="sign-up-form" method="POST" enctype="multipart/form-data">
 <div class="header">
 <h1>Product Add</h1>
         </div>
@@ -153,7 +153,7 @@ $asdw=$_GET['type'];
 
 
  <div id="productupdate" style="display:<?php echo $asdw;?>;">
- <form action="./formcontrol/productmenu.php"class="sign-up-form" method="POST" enctype="multipart/form-data">
+ <form action="./formcontrol/adminproduct.php"class="sign-up-form" method="POST" enctype="multipart/form-data">
 <div class="header">
 <h1>Product update</h1>
         </div>

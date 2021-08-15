@@ -41,7 +41,7 @@ $messagebox2="<script>  swal('Good job!', 'Registration is Successful. User id i
          echo "<div style=' z-index: 2; width:400px; background-color: rgb(158, 241, 190); text-align: center; box-shadow: rgba(82, 82, 85, 0.2) 1px 1px 5px 1px; padding: 10px; margin:200px;'>
          <p style='font-weight: 900; color: rgb(0, 0, 0);'>Registration is complete</p>
          <p style='font-weight: 900; color: rgb(0, 0, 0);'>Your user_id is :$uerid</p>
-         <a href='http://localhostFood-Hub-restaurant/Views/signup.php'>$messagebox2<button style='width: 80px; height: 40px; background-color: rgb(127, 164, 245); border: none; font-weight: 900; margin-left:300px ;'>Ok</button></a>
+         <a href='http://localhost/Food-Hub-restaurant/Views/signup.php'>$messagebox2<button style='width: 80px; height: 40px; background-color: rgb(127, 164, 245); border: none; font-weight: 900; margin-left:300px ;'>Ok</button></a>
          
      </div>";
     
